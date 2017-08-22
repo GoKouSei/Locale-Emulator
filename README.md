@@ -1,6 +1,11 @@
 Locale Emulator
 ===============
 
+[![license](https://img.shields.io/github/license/xupefei/Locale-Emulator.svg)](https://www.gnu.org/licenses/lgpl-3.0.en.html)
+[![AppVeyor](https://img.shields.io/appveyor/ci/xupefei/Locale-Emulator.svg)](https://ci.appveyor.com/project/xupefei/Locale-Emulator)
+[![Github All Releases](https://img.shields.io/github/downloads/xupefei/Locale-Emulator/total.svg)](https://github.com/xupefei/Locale-Emulator/releases)
+[![GitHub release](https://img.shields.io/github/release/xupefei/Locale-Emulator.svg)](https://github.com/xupefei/Locale-Emulator/releases/latest)
+
 Yet Another System Region and Language Simulator
 
 ![LE interface](http://i.imgur.com/E4Gqyly.png)
@@ -23,7 +28,7 @@ After you translated the above files into your language, please either create a 
 ## Build ##
 
  1. Clone the repo using Git.
- 2. Install Microsoft Visual Studio 2012 / 2013.
+ 2. Install Microsoft Visual Studio 2015 / 2017.
  3. Open `LocaleEmulator.sln`.
  4. Perform Build action.
 

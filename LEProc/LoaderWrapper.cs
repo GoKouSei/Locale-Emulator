@@ -179,7 +179,7 @@ namespace LEProc
             var locLEB = Marshal.AllocHGlobal(newLEB.Length);
             Marshal.Copy(newLEB, 0, locLEB, newLEB.Length);
 
-            return LeCreateProcess(locLEB,
+            var ret = LeCreateProcess(locLEB,
                                    ApplicationName,
                                    CommandLine,
                                    CurrentDirectory,
@@ -190,6 +190,10 @@ namespace LEProc
                                    IntPtr.Zero,
                                    IntPtr.Zero,
                                    IntPtr.Zero);
+
+            Marshal.FreeHGlobal(locLEB);
+
+            return ret;
         }
 
         private static byte[] SetBytes(byte[] bytesInput, IEnumerable<byte> bytesValue)
@@ -250,7 +254,7 @@ namespace LEProc
                                                   [MarshalAs(UnmanagedType.LPWStr), In] string applicationName,
                                                   [MarshalAs(UnmanagedType.LPWStr), In] string commandLine,
                                                   [MarshalAs(UnmanagedType.LPWStr), In] string currentDirectory,
-                                                  ulong creationFlags,
+                                                  uint creationFlags,
                                                   IntPtr startupInfo,
                                                   IntPtr processInformation,
                                                   IntPtr processAttributes,
